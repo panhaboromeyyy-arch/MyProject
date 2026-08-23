@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7c3aed" />
+    <title>Resume Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Resume Studio home"><span>R</span> Resume Studio</a>
+      <div class="topbar-actions">
+        <button class="button button-quiet" id="resetButton" type="button">Reset</button>
+        <button class="button button-dark" id="printButton" type="button">Download / Print</button>
+      </div>
+    </header>
+
+    <main id="top" class="workspace">
+      <section class="editor-panel" aria-labelledby="editor-title">
+        <div class="eyebrow">Resume builder</div>
+        <h1 id="editor-title">Build your next opportunity.</h1>
+        <p class="intro">Fill in your details and watch your professional resume take shape.</p>
+
+        <form id="resumeForm">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="field-grid">
+              <label>Full name<input id="fullName" value="Jordan Ellis" autocomplete="name" /></label>
+              <label>Professional title<input id="title" value="Product Designer" /></label>
+              <label>Email<input id="email" value="jordan.ellis@email.com" type="email" autocomplete="email" /></label>
+              <label>Phone<input id="phone" value="+1 555 014 2278" type="tel" autocomplete="tel" /></label>
+              <label class="full-width">Location<input id="location" value="Seattle, Washington" autocomplete="address-level2" /></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Profile</legend>
+            <label>About you<textarea id="summary" rows="4">Curious, user-centred product designer with a love for turning complex ideas into simple, thoughtful digital experiences.</textarea></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Skills & languages</legend>
+            <div class="field-grid">
+              <label>Skills <span>Separate with commas</span><textarea id="skills" rows="3">Product strategy, UX research, Figma, Prototyping, Design systems</textarea></label>
+              <label>Languages <span>Separate with commas</span><textarea id="languages" rows="3">English — Native, French — Conversational, Japanese — Basic</textarea></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Experience</legend>
+            <label>Current / most recent role<textarea id="experience" rows="5">Senior Product Designer | Northstar Labs | 2021 — Present
+Led discovery and design for a B2B analytics platform used by more than 20,000 teams. Partnered with engineering and research to improve activation by 28%.</textarea></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Education</legend>
+            <label>Education details<textarea id="education" rows="3">B.A. Interaction Design | Pacific Northwest College | 2014 — 2018</textarea></label>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="preview-area" aria-label="Live resume preview">
+        <div class="preview-label"><span class="status-dot"></span> Live preview</div>
+        <article class="resume" id="resumePreview">
+          <div class="accent-column"></div>
+          <div class="resume-content">
+            <header class="resume-header">
+              <div class="monogram" id="previewInitials">JE</div>
+              <div>
+                <p class="resume-name" id="previewName">Jordan Ellis</p>
+                <p class="resume-title" id="previewTitle">Product Designer</p>
+              </div>
+            </header>
+            <div class="contact-row">
+              <span id="previewEmail">jordan.ellis@email.com</span><span id="previewPhone">+1 555 014 2278</span><span id="previewLocation">Seattle, Washington</span>
+            </div>
+            <div class="resume-body">
+              <aside>
+                <section class="resume-section"><h2>Profile</h2><p id="previewSummary">Curious, user-centred product designer with a love for turning complex ideas into simple, thoughtful digital experiences.</p></section>
+                <section class="resume-section"><h2>Skills</h2><ul id="previewSkills"></ul></section>
+                <section class="resume-section"><h2>Languages</h2><ul id="previewLanguages"></ul></section>
+              </aside>
+              <div class="main-column">
+                <section class="resume-section"><h2>Experience</h2><div id="previewExperience"></div></section>
+                <section class="resume-section"><h2>Education</h2><div id="previewEducation"></div></section>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
