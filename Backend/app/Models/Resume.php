@@ -1,29 +1,29 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Resume extends Model
-{
-    use HasFactory;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
 
-    protected $fillable = [
-        'full_name',
-        'email',
-        'phone',
-        'title',
-        'summary',
-        'skills',
-        'experience',
-        'education',
-        'file_path',
-    ];
+    class Resume extends Model
+    {
+        use HasFactory;
 
-    protected $casts = [
-        'skills' => 'array',
-        'experience' => 'array',
-        'education' => 'array',
-    ];
-}
+        protected $fillable = [
+            'full_name',
+            'email',
+            'phone',
+            'title',
+            'summary',
+            'skills',
+            'experience',
+            'education',
+            'file_path',
+        ];
+
+        protected $casts = [
+            'skills' => 'array',
+            'experience' => 'array',
+            'education' => 'array',
+        ];
+    }
