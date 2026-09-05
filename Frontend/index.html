@@ -6,311 +6,266 @@
     <meta name="theme-color" content="#7c3aed" />
     <title>Resume Studio</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="../Frontend/assets/logo.PNG" />
+    <link rel="icon" type="image/x-icon" href="assets/logo.PNG" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Resume Studio home">
-        <img src="../Frontend/assets/logo.PNG" alt="Logo" class="brand-logo" />
-        Resume Studio
+      <a href="#top" class="brand" aria-label="Resume Studio">
+        <img src="assets/logo.PNG" alt="MNC Logo" />
+        <span>Resume Studio</span>
       </a>
       <div class="topbar-actions">
+        <a class="button button-quiet" href="login.html">Login</a>
+        <a class="button button-quiet" href="register.html">Register</a>
         <button class="button button-quiet" id="resetButton" type="button">Reset</button>
         <button class="button button-dark" id="printButton" type="button">Download / Print</button>
       </div>
     </header>
 
-<main id="top" class="workspace">
-    <section class="editor-panel" aria-labelledby="editor-title">
+    <main id="top" class="workspace">
+      <section class="editor-panel" aria-labelledby="editor-title">
 
         <div class="eyebrow">Resume builder</div>
-
         <h1 id="editor-title">Build your next opportunity.</h1>
-
         <p class="intro">
-            Fill in your details and watch your professional resume take shape.
+          Fill in your details and watch your professional resume take shape.
         </p>
 
         <form id="resumeForm">
 
-            <!-- Personal Details -->
-            <fieldset>
-                <legend>Personal details</legend>
+          <!-- Design & Layout Customization -->
+          <fieldset>
+            <legend>Design & Layout</legend>
 
-                <div class="field-grid">
+            <div class="field-grid">
 
-                    <label>
-                        Full name
-                        <input
-                            id="fullName"
-                            autocomplete="name"
-                            placeholder="Enter your full name"
-                        />
-                    </label>
+              <label class="full-width">
+                Template Style
+                <select id="layoutStyle">
+                  <option value="modern-cv">Modern CV</option>
+                  <option value="gradient-bar">Solid / Gradient Bar</option>
+                </select>
+              </label>
 
-                    <label>
-                        Professional title
-                        <input
-                            id="title"
-                            placeholder="e.g. Frontend Developer"
-                        />
-                    </label>
+              <label>
+                Theme / Frame Color (Start)
+                <input 
+                  type="color" 
+                  id="themeStartColor" 
+                  value="#f2dede" 
+                />
+              </label>
 
-                    <label>
-                        Email
-                        <input
-                            id="email"
-                            type="email"
-                            autocomplete="email"
-                            placeholder="example@email.com"
-                        />
-                    </label>
+              <label>
+                Frame Color (End / Gradient)
+                <input 
+                  type="color" 
+                  id="themeEndColor" 
+                  value="#8b5cf6" 
+                />
+              </label>
 
-                    <label>
-                        Phone
-                        <input
-                            id="phone"
-                            type="tel"
-                            autocomplete="tel"
-                            placeholder="+1 555 123 4567"
-                        />
-                    </label>
+              <label class="full-width">
+                Profile Photo
+                <input 
+                  type="file" 
+                  id="photoInput" 
+                  accept="image/*" 
+                />
+              </label>
 
-                    <label class="full-width">
-                        Location
-                        <input
-                            id="location"
-                            autocomplete="address-level2"
-                            placeholder="City, Country"
-                        />
-                    </label>
+            </div>
+          </fieldset>
 
-                </div>
-            </fieldset>
+          <!-- Personal Details -->
+          <fieldset>
+            <legend>Personal details</legend>
 
+            <div class="field-grid">
+              <label>
+                Full name
+                <input id="fullName" autocomplete="name" placeholder="Enter your full name" />
+              </label>
 
-            <!-- Profile -->
-            <fieldset>
-                <legend>Profile</legend>
+              <label>
+                Professional title
+                <input id="title" placeholder="e.g. Designer and Architect" />
+              </label>
 
-                <label>
-                    About you
-                    <textarea
-                        id="summary"
-                        rows="4"
-                        placeholder="Write a short professional summary about yourself..."
-                    ></textarea>
-                </label>
+              <label>
+                Email
+                <input id="email" type="email" autocomplete="email" placeholder="example@email.com" />
+              </label>
 
-            </fieldset>
+              <label>
+                Phone
+                <input id="phone" type="tel" autocomplete="tel" placeholder="+1 555 123 4567" />
+              </label>
 
+              <label class="full-width">
+                Location
+                <input id="location" autocomplete="address-level2" placeholder="City, Country" />
+              </label>
+            </div>
+          </fieldset>
 
-            <!-- Skills & Languages -->
-            <fieldset>
-                <legend>Skills & languages</legend>
+          <!-- Profile -->
+          <fieldset>
+            <legend>Profile</legend>
+            <label>
+              About you
+              <textarea id="summary" rows="4" placeholder="Write a short summary..."></textarea>
+            </label>
+          </fieldset>
 
-                <div class="field-grid">
+          <!-- Skills & Languages -->
+          <fieldset>
+            <legend>Skills & languages</legend>
+            <div class="field-grid">
+              <label>
+                Skills
+                <span>Separate with commas</span>
+                <textarea id="skills" rows="3" placeholder="Editing, Photo Editing, Video Editing"></textarea>
+              </label>
 
-                    <label>
-                        Skills
-                        <span>Separate with commas</span>
+              <label>
+                Languages
+                <span>Separate with commas</span>
+                <textarea id="languages" rows="3" placeholder="English, Spanish, Italian"></textarea>
+              </label>
+            </div>
+          </fieldset>
 
-                        <textarea
-                            id="skills"
-                            rows="3"
-                            placeholder="Figma, React, UX Research, JavaScript"
-                        ></textarea>
-                    </label>
+          <!-- Experience -->
+          <fieldset>
+            <legend>Experience</legend>
+            <label>
+              Current / most recent role
+              <textarea id="experience" rows="5" placeholder="Company: Wardiere Inc.&#10;Role: Designer & Team Leader&#10;Years: 2020 - Present"></textarea>
+            </label>
+          </fieldset>
 
-                    <label>
-                        Languages
-                        <span>Separate with commas</span>
+          <!-- Education -->
+          <fieldset>
+            <legend>Education</legend>
+            <label>
+              Education details
+              <textarea id="education" rows="3" placeholder="Degree: Bachelor of Design&#10;School: Borcelle University"></textarea>
+            </label>
+          </fieldset>
 
-                        <textarea
-                            id="languages"
-                            rows="3"
-                            placeholder="English — Native, French — Conversational"
-                        ></textarea>
-                    </label>
-
-                </div>
-            </fieldset>
-
-
-            <!-- Experience -->
-            <fieldset>
-                <legend>Experience</legend>
-
-                <label>
-                    Current / most recent role
-
-                    <textarea
-                        id="experience"
-                        rows="5"
-                        placeholder="Company: ABC Company&#10;Role: Frontend Developer&#10;Years: 2024 - Present"
-                    ></textarea>
-                </label>
-
-            </fieldset>
-
-
-            <!-- Education -->
-            <fieldset>
-                <legend>Education</legend>
-
-                <label>
-                    Education details
-
-                    <textarea
-                        id="education"
-                        rows="3"
-                        placeholder="Degree: B.S. Computer Science&#10;School: University"
-                    ></textarea>
-                </label>
-
-            </fieldset>
-
-
-            <!-- Save -->
-            <button
-                class="button button-dark"
-                type="submit"
-            >
-                Save Resume
-            </button>
+          <button class="button button-dark" type="submit">Save Resume</button>
 
         </form>
 
-    </section>
+      </section>
 
-
-    <!-- Live Preview -->
-    <section
-        class="preview-area"
-        aria-label="Live resume preview"
-    >
+      <!-- Live Preview -->
+      <section class="preview-area" aria-label="Live resume preview">
 
         <div class="preview-label">
-            <span class="status-dot"></span>
-            Live preview
+          <span class="status-dot"></span>
+          Live preview
         </div>
 
-        <article
-            class="resume"
-            id="resumePreview"
-        >
+        <article class="resume modern-cv" id="resumePreview">
 
-            <div class="accent-column"></div>
+          <!-- Gradient Bar Element (Used for "Solid / Gradient Bar" mode) -->
+          <div class="accent-column"></div>
 
-            <div class="resume-content">
-
-                <!-- Resume Header -->
-                <header class="resume-header">
-
-                    <div
-                        class="monogram"
-                        id="previewInitials"
-                    ></div>
-
-                    <div>
-
-                        <p
-                            class="resume-name"
-                            id="previewName"
-                        ></p>
-
-                        <p
-                            class="resume-title"
-                            id="previewTitle"
-                        ></p>
-
-                    </div>
-
-                </header>
-
-
-                <!-- Contact -->
-                <div class="contact-row">
-
-                    <span id="previewEmail"></span>
-
-                    <span id="previewPhone"></span>
-
-                    <span id="previewLocation"></span>
-
-                </div>
-
-
-                <!-- Resume Body -->
-                <div class="resume-body">
-
-                    <aside>
-
-                        <!-- Profile -->
-                        <section class="resume-section">
-
-                            <h2>Profile</h2>
-
-                            <p id="previewSummary"></p>
-
-                        </section>
-
-
-                        <!-- Skills -->
-                        <section class="resume-section">
-
-                            <h2>Skills</h2>
-
-                            <ul id="previewSkills"></ul>
-
-                        </section>
-
-
-                        <!-- Languages -->
-                        <section class="resume-section">
-
-                            <h2>Languages</h2>
-
-                            <ul id="previewLanguages"></ul>
-
-                        </section>
-
-                    </aside>
-
-
-                    <!-- Main Column -->
-                    <div class="main-column">
-
-                        <!-- Experience -->
-                        <section class="resume-section">
-
-                            <h2>Experience</h2>
-
-                            <div id="previewExperience"></div>
-
-                        </section>
-
-
-                        <!-- Education -->
-                        <section class="resume-section">
-
-                            <h2>Education</h2>
-
-                            <div id="previewEducation"></div>
-
-                        </section>
-
-                    </div>
-
-                </div>
-
+          <!-- Left Sidebar Panel (Used for "Modern CV" mode) -->
+          <aside class="resume-sidebar">
+            <div class="photo-frame">
+              <div class="photo-container">
+                <img id="previewPhotoSidebar" src="" alt="Profile Photo" style="display: none;" />
+                <div class="monogram" id="previewInitialsSidebar"></div>
+              </div>
             </div>
+
+            <section class="resume-section">
+              <h2 class="section-badge">ABOUT ME</h2>
+              <p id="previewSummarySidebar"></p>
+            </section>
+
+            <section class="resume-section">
+              <h2 class="section-badge">CONTACT</h2>
+              <div class="contact-list">
+                <p id="previewEmailSidebar"></p>
+                <p id="previewPhoneSidebar"></p>
+                <p id="previewLocationSidebar"></p>
+              </div>
+            </section>
+
+            <section class="resume-section">
+              <h2 class="section-badge">SKILLS</h2>
+              <ul id="previewSkillsSidebar"></ul>
+            </section>
+
+            <section class="resume-section">
+              <h2 class="section-badge">LANGUAGES</h2>
+              <ul id="previewLanguagesSidebar"></ul>
+            </section>
+          </aside>
+
+          <!-- Main Content Area -->
+          <main class="resume-main">
+
+            <header class="resume-header">
+              <div class="photo-container header-photo">
+                <img id="previewPhotoHeader" src="" alt="Profile Photo" style="display: none;" />
+                <div class="monogram" id="previewInitialsHeader"></div>
+              </div>
+
+              <div>
+                <h1 class="resume-name" id="previewName">OLIVIA WILSON</h1>
+                <p class="resume-title" id="previewTitle">DESIGNER AND ARCHITECT</p>
+              </div>
+            </header>
+
+            <div class="contact-row classic-contact">
+              <span id="previewEmailClassic"></span>
+              <span id="previewPhoneClassic"></span>
+              <span id="previewLocationClassic"></span>
+            </div>
+
+            <div class="resume-body-content">
+              <aside class="classic-aside">
+                <section class="resume-section">
+                  <h2>PROFILE</h2>
+                  <p id="previewSummaryClassic"></p>
+                </section>
+
+                <section class="resume-section">
+                  <h2>SKILLS</h2>
+                  <ul id="previewSkillsClassic"></ul>
+                </section>
+
+                <section class="resume-section">
+                  <h2>LANGUAGES</h2>
+                  <ul id="previewLanguagesClassic"></ul>
+                </section>
+              </aside>
+
+              <div class="main-column">
+                <section class="resume-section">
+                  <h2 class="section-badge">WORK EXPERIENCE</h2>
+                  <div id="previewExperience"></div>
+                </section>
+
+                <section class="resume-section">
+                  <h2 class="section-badge">EDUCATION</h2>
+                  <div id="previewEducation"></div>
+                </section>
+              </div>
+            </div>
+
+          </main>
 
         </article>
 
-    </section>
+      </section>
 
-</main>
+    </main>
 
     <script src="app.js"></script>
   </body>

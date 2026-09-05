@@ -1,0 +1,12 @@
+{
+  "name": "laravel-project",
+  "version": "1.0.0",
+  "scripts": {
+    "backend": "cd Backend && php artisan serve --port=8000",
+    "frontend": "cd Frontend && php -S localhost:3000",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"  
+  }
+}

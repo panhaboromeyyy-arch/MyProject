@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Resume Studio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f6f9;
+      color: #1e293b;
+      padding: 20px 0;
+    }
+
+    .auth-container {
+      display: flex;
+      width: 920px;
+      max-width: 95%;
+      min-height: 600px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    /* Left side banner */
+    .auth-banner {
+      flex: 1;
+      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+      color: #ffffff;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .auth-banner h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .auth-banner p {
+      color: #e0e7ff;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* Right side form */
+    .auth-form-wrapper {
+      flex: 1.1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-form-wrapper h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .auth-form-wrapper p.subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 6px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      outline: none;
+      background: #fff;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background: #4f46e5;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background: #4338ca;
+    }
+
+    .auth-footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .auth-footer a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .auth-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <!-- Left Banner -->
+    <div class="auth-banner">
+      <div>
+        <h1>Join Resume Studio</h1>
+        <p>Create an account to build your interactive resume or manage application portals.</p>
+      </div>
+      <p style="font-size: 12px; opacity: 0.8;">© 2026 Dynamic Portal</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="auth-form-wrapper">
+      <h2>Create Account</h2>
+      <p class="subtitle">Get started by filling in your details</p>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="name@company.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Register As</label>
+          <select id="role">
+            <option value="user">User (Applicant)</option>
+            <option value="employee">Employee (Reviewer)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password_confirmation">Confirm Password</label>
+          <input type="password" id="password_confirmation" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" class="btn-submit">Create Account</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in here</a>
+      </div>
+    </div>
+  </div>
+    <script src="Register.js"></script>
+</body>
+</html>
